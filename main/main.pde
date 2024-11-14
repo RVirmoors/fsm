@@ -1,9 +1,12 @@
 // 1: circle at (mouseX, mouseY)
 // 2: 2 circles, (mouseX, mouseY) (pmouseX, pmouseY)
+// 3: ellipse at (mouseX+pmouseX)/2, ...
+// 4: history of 5 previous positions
 int state;
 
 void setup() {
   size(400, 400);
+  frameRate(20);
 }
 
 void draw() {
@@ -19,7 +22,15 @@ void draw() {
     fill(100,255,20,100);
     circle(mouseX, mouseY, 50);
     fill(255,10,90,100);
-    circle(mouseX, mouseY, 30);
+    circle(pmouseX, pmouseY, 30);
+  }
+  if (state == 3) {
+    fill(100,255,20,100);
+    circle(mouseX, mouseY, 50);
+    fill(255,10,90,100);
+    circle(pmouseX, pmouseY, 30);
+    fill(10,130,255,100);
+    ellipse((mouseX+pmouseX)/2, (mouseY+pmouseY)/2, 70, 10);
   }
 }
 
