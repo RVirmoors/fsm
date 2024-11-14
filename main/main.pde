@@ -1,4 +1,5 @@
 // 1: circle at (mouseX, mouseY)
+// 2: 2 circles, (mouseX, mouseY) (pmouseX, pmouseY)
 int state;
 
 void setup() {
@@ -11,8 +12,14 @@ void draw() {
   textSize(50);
   text(state, 10, 60);
   if (state == 1) {
-    fill(100,200,20); // cerc verde
+    fill(100,255,20,100); // cerc verde RGBA
     circle(mouseX, mouseY, 50);
+  }
+  if (state == 2) {
+    fill(100,255,20,100);
+    circle(mouseX, mouseY, 50);
+    fill(255,10,90,100);
+    circle(mouseX, mouseY, 30);
   }
 }
 
