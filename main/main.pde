@@ -3,6 +3,8 @@
 // 3: ellipse at (mouseX+pmouseX)/2, ...
 // 4: history of 5 previous positions
 int state;
+int[] mx = {0, 0, 0, 0, 0};
+int[] my = {0, 0, 0, 0, 0};
 
 void setup() {
   size(400, 400);
